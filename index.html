@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles/style.css" />
+    <link rel="stylesheet" href="src/styles/snackbar.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="src/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="src/favicon_io/site.webmanifest">
+    <!-- leaflet  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- chart.js  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <!-- Load Esri Leaflet from CDN -->
+    <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Load local packages -->
+    <link rel="stylesheet" href="src/Leaflet.Legend/leaflet.legend.css" />
+    <script src="src/Leaflet.Legend/leaflet.legend.js"></script>
+
+    <title>WxDash</title>
+</head>
+
+<body>
+    <div id="snackbar"></div>
+    <div class="container">
+        <header class="block">
+            <h3>
+                NOAA Weather Dashboard <input id="helpBtn" type="image" src="src/img/help-button.svg" style="width:15px" alt="Help Button"
+                                              onclick="window.open('pages/help/index.html', '_blank')" />
+                <img id="headerIcon" src="src/favicon_io/favicon-32x32.png" />
+            </h3>
+        </header>
+        <button style="display:none" id="clearSelection" onclick="clearSelection()">Clear Selection</button>
+        <div id="mapid"></div>
+
+        <div id="search" class="search">
+            <input type="text" name="filter" class="block" placeholder=" Filter.." id="filter" />
+            <div class="collection-container">
+                <p class="collection"></p>
+            </div>
+        </div>
+
+        <div id="indecator1" class="indecator block">
+            <h2>-</h2>
+            <span> </span>
+            <p>
+                <br />
+
+            </p>
+        </div>
+        <div id="indecator2" class="indecator block">
+            <h2>-</h2>
+            <span> </span>
+            <p>
+                <br />
+
+            </p>
+        </div>
+        <div id="list-container" class="block">
+            <h5 id="list-title">Collection List</h5>
+            <ul id="list"></ul>
+        </div>
+        <footer class="block"><p class="userCount">Users on Page:</p></footer>
+    </div>
+    <script src="src/js/script.js"></script>
+    <script src="src/js/radar.js"></script>
+    <script src="src/js/basemaps.js"></script>
+    <script src="src/js/helpers.js"></script>
+    <script src="src/js/customtoolbars.js"></script>
+    <script></script>
+</body>
+
+</html>
