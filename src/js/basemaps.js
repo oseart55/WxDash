@@ -3,8 +3,12 @@ baseMapSources.forEach((baseMapSource) => {
         attribution: baseMapSource.Text,
         maxZoom: baseMapSource.MaxZoom
     });
-    if (baseMapSource.default) {
-        layer.addTo(map);
-    }
     baseMaps[baseMapSource.Title] = layer;
 });
+if (_userPreferences["basemap"]) {
+    layer = _userPreferences["basemap"];
+    baseMaps[layer].addTo(map);
+}
+else {
+    baseMaps["CartoDB_DarkMatter"].addTo(map);
+}

@@ -676,3 +676,13 @@ li:hover {
 .userCount{
     font-size: 10px;
 }
+
+.newFeatureTitle {
+    color: black;
+    text-align: center;
+}
+
+.modal {
+    color: black;
+    text-align: center;
+}

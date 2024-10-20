@@ -19,10 +19,12 @@
     <!-- Load Esri Leaflet from CDN -->
     <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- Load local packages -->
+    <!-- Load Leaflet.Legend -->
     <link rel="stylesheet" href="src/Leaflet.Legend/leaflet.legend.css" />
     <script src="src/Leaflet.Legend/leaflet.legend.js"></script>
-
+    <!-- Load jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <title>WxDash</title>
 </head>
 
@@ -37,7 +39,7 @@
             </h3>
         </header>
         <button style="display:none" id="clearSelection" onclick="clearSelection()">Clear Selection</button>
-        <div id="mapid"></div>
+        <div id="mapid" style="z-index:1"></div>
 
         <div id="search" class="search">
             <input type="text" name="filter" class="block" placeholder=" Filter.." id="filter" />
@@ -66,20 +68,10 @@
             <h5 id="list-title" style="text-align:center">Collection List</h5>
             <ul id="list"></ul>
         </div>
-        <footer class="block"><p class="userCount">Users on Page:</p></footer>
+        <footer class="block"></footer>
     </div>
-    <script src="src/js/Map.js"></script> <!--base Leaflet Map.-->
-    <script src="src/js/BaseMapSources.js"></script> <!--json of map sources-->
-    <script src="src/js/FeatureLayerSources.js"></script> <!--json of feature sources-->
-    <script src="src/js/GetIconStyle.js"></script> <!--long helper function for getting icon styles-->
-    <script src="src/js/Basemaps.js"></script> <!--add basemaps to Map-->
-    <script src="src/js/FeatureLayers.js"></script> <!--add feature layers to Map-->
-    <script src="src/js/Dashboard.js"></script> <!--add main Dashboard functionality-->
-    <script src="src/js/LayerController.js"></script> <!--add Layer controller/Layer extensions-->
-    <script src="src/js/radar.js"></script>
-    <script src="src/js/helpers.js"></script>
-    <script src="src/js/customtoolbars.js"></script>
-    <script></script>
+    <div id="featureModal" class="modal"></div>
+    <script src="src/js/Scripts.js"></script>
 </body>
 
 </html>

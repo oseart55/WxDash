@@ -1,3 +1,5 @@
+_userLayers = JSON.parse(_userPreferences["layers"]);
+
 featureLayerSources.forEach((featureLayerSource) => {
     let featurelayer;
     if (featureLayerSource.Type == "featureLayer") {
@@ -56,4 +58,25 @@ function CreateImageLayer(featureLayerSource) {
         attribution: featureLayerSource.attribution,
     });
     return layer
+}
+if (_userLayers.length > 0) {
+    _userLayers.forEach((layer) => {
+        if (layer.visible) {
+            overlayMaps[layer.name].addTo(map);
+            switch (layer.name) {
+                case "NOAA SPOT":
+                    NOAA_SPOT_Legend.addTo(map);
+                    break;
+                case "1 Day Fire Forecast":
+                    Fire_Forecast_Legend.addTo(map);
+                    break;
+                case "Tropical Weather Outlook (7 day)":
+                    TropicalWeatherOutlook_Lengend.addTo(map);
+                    break;
+                case "NOAA METAR":
+                    METAR_Legend.addTo(map);
+                    break;
+            }
+        }
+    })
 }

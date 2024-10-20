@@ -382,7 +382,7 @@ function removeLayer(layer) {
         case "Seven Day Graphical Tropical Weather Outlook":
             TropicalWeatherOutlook.remove();
             return;
-        case "Current Weather Radar":
+        case "Current RADAR Weather":
             radarLayer.remove();
             EndRadar();
             return;

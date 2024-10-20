@@ -131,8 +131,8 @@ function GetWarningColor(properties) {
     return _class;
 }
 
-var toolbar = L.control({ position: "bottomleft" });
-toolbar.onAdd = function (map) {
+var radarToolbar = L.control({ position: "bottomleft" });
+radarToolbar.onAdd = function (map) {
     var div = L.DomUtil.create('div', 'custom-control toolbar radar');
 
     div.innerHTML = `<div id="radar-date" style="color:black">Loading...</div><div style='color:black'><input type="range" min="1" max="10" value="5" id="speedSlider""></div>`;

@@ -20,23 +20,43 @@ for (layer in overlayMaps) {
 }
 
 map.on('overlayadd', onOverlayAdd);
+map.on("baselayerchange", onBaseMapChange);
 map.on('overlayremove', onOverlayAdd);
+map.on("dragend", onDragEnd);
+map.on("zoom", onZoom);
+
+function onZoom() {
+    localStorage.setItem('zoom', map.getZoom());
+}
+
+function onDragEnd() {
+    loc = map.getCenter();
+    localStorage.setItem('location', JSON.stringify(loc));
+}
+
+function onBaseMapChange(baseMapLayer) {
+    localStorage.setItem('basemap', baseMapLayer.name);
+}
 
 function onOverlayAdd(e) {
-    removeLegend();
     _layers = layerControl.getOverlays();
     for (layer of _layers) {
         if (layer.visible) {
             showLegend(layer.name);
-            if (layer.name == "Current Weather Radar") {
+            if (layer.name == "Current RADAR Weather") {
                 StartRadar();
             }
         }
         else {
-            removeLayer(layer.name);
+            removeLegend(layer.name);
         }
     }
     rerenderAll();
+    UpdateUserPreferences(_layers);
+}
+
+function UpdateUserPreferences(layers) {
+    localStorage.setItem('layers', JSON.stringify(layers));
 }
 
 // functions List
@@ -113,7 +133,7 @@ function renderList(layer) {
     switch (layer) {
         case layer:
             featureLayerSources.forEach((source) => {
-                if (source.Title == layer) {
+                if (source.Title == layer && source.Title != "Current RADAR Weather") {
                     overlayMaps[layer].eachActiveFeature(function (e) {
                         let data = {}
                         source.options.properties.forEach((prop) => {
@@ -284,6 +304,39 @@ function showSnackbar() {
     setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
 }
 
+function showLegend(layer) {
+    switch (layer) {
+        case "NOAA SPOT":
+            NOAA_SPOT_Legend.addTo(map);
+            break;
+        case "1 Day Fire Forecast":
+            Fire_Forecast_Legend.addTo(map);
+            break;
+        case "Tropical Weather Outlook (7 day)":
+            TropicalWeatherOutlook_Lengend.addTo(map);
+            break;
+        case "NOAA METAR":
+            METAR_Legend.addTo(map);
+            break;
+    }
+}
+
+function removeLegend(layer) {
+    switch (layer) {
+        case "NOAA SPOT":
+            NOAA_SPOT_Legend.remove();
+            break;
+        case "1 Day Fire Forecast":
+            Fire_Forecast_Legend.remove();
+            break;
+        case "Tropical Weather Outlook (7 day)":
+            TropicalWeatherOutlook_Lengend.remove();
+            break;
+        case "NOAA METAR":
+            METAR_Legend.remove();
+            break;
+    }
+}
 
 let autoUpdate = setInterval(() => {
     for (layer in overlayMaps) {

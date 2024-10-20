@@ -3,6 +3,14 @@ let current = 0;
 let next = 1;
 let timer;
 let timerSet = false;
+let radarLayer;
+
+
+for (layer in overlayMaps) {
+    if (layer == "Current RADAR Weather") {
+        radarLayer = overlayMaps[layer];
+    }
+}
 
 function GetRadar() {
     $.getJSON('https://mapservices.weather.noaa.gov/eventdriven/rest/services/radar/radar_base_reflectivity_time/ImageServer/query?where=&outFields=idp_validtime&returnGeometry=false&returnIdsOnly=false&returnCountOnly=false&returnExtentOnly=false&f=pjson&rand=0.21689886897517696', function (result) {
@@ -27,7 +35,7 @@ function GetImage() {
 }
 
 function StartRadar() {
-    toolbar.addTo(map);
+    radarToolbar.addTo(map);
     const speedSlider = document.getElementById("speedSlider");
     const controlContainer = document.getElementsByClassName('radar');
     SetTimer(3000);
@@ -84,7 +92,7 @@ function StartRadar() {
 }
 
 function EndRadar() {
-    toolbar.remove();
+    radarToolbar.remove();
     clearInterval(timer);
     current = 0;
     next = 0;
