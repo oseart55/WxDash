@@ -113,22 +113,22 @@ function rerenderAll() {
         indecator2.innerHTML = `<h2> ${fireAreaElevated.length + fireAreaCritical.length + fireAreaExtreme.length} </h2> <span> </span> <p> <br> Fire Areas  </p>`
 
     if (prob2day30.length > 0) {
-        indecator1.innerHTML = `<p style='margin:10px'> ${prob2day30.length} <br> < 30% Change of Formation  </p>`;
+        indecator1.innerHTML = `<p style='margin:10px'> ${prob2day30.length} <br> < 30% Chance of Formation  </p>`;
     }
     if (prob2day60.length > 0) {
         if (prob2day30.length > 0) {
-            indecator1.innerHTML += `<p style='margin:10px'> ${prob2day60.length} <br> < 60% Change of Formation  </p>`;
+            indecator1.innerHTML += `<p style='margin:10px'> ${prob2day60.length} <br> < 60% Chance of Formation  </p>`;
         }
         else {
-            indecator1.innerHTML = `<p style='margin:10px'> ${prob2day60.length} <br> < 60% Change of Formation  </p>`;
+            indecator1.innerHTML = `<p style='margin:10px'> ${prob2day60.length} <br> < 60% Chance of Formation  </p>`;
         }
     }
     if (prob2day70.length > 0) {
         if (prob2day30.length > 0 || prob2day60.length > 0) {
-            indecator1.innerHTML += `<p style='margin:10px'> ${prob2day70.length} <br> > 70% Change of Formation  </p>`;
+            indecator1.innerHTML += `<p style='margin:10px'> ${prob2day70.length} <br> > 70% Chance of Formation  </p>`;
         }
         else {
-            indecator1.innerHTML = `<p style='margin:10px'> ${prob2day70.length} <br> > 70% Change of Formation  </p>`;
+            indecator1.innerHTML = `<p style='margin:10px'> ${prob2day70.length} <br> > 70% Chance of Formation  </p>`;
         }
     }
         
