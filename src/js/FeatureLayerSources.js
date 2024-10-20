@@ -26,7 +26,7 @@ var featureLayerSources = [
         "attribution": '&copy; <a href="https://sos.noaa.gov/copyright/">NOAA</a>',
     },
     {
-        "Title": "Tropical Weather Outlook (7 day)",
+        "Title": "Tropical Weather Outlook",
         "Type": "featureLayer",
         "Url": "https://mapservices.weather.noaa.gov/tropical/rest/services/tropical/NHC_tropical_weather/MapServer/2",
         "options": {

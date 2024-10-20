@@ -5,8 +5,8 @@ baseMapSources.forEach((baseMapSource) => {
     });
     baseMaps[baseMapSource.Title] = layer;
 });
-if (_userPreferences["basemap"]) {
-    layer = _userPreferences["basemap"];
+if (localStorage.getItem('basemap')) {
+    layer = localStorage.getItem('basemap');
     baseMaps[layer].addTo(map);
 }
 else {

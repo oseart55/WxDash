@@ -1,4 +1,4 @@
-_userLayers = JSON.parse(_userPreferences["layers"]);
+_userLayers = JSON.parse(localStorage.getItem('layers'));
 
 featureLayerSources.forEach((featureLayerSource) => {
     let featurelayer;
