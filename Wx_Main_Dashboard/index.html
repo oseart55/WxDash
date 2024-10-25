@@ -28,34 +28,29 @@
     <title>WxDash</title>
 </head>
 
-<body style="overflow: hidden">
+<body>
     <div id="snackbar"></div>
     <div class="container">
         <header class="block">
-            <h3 id="headerH">
-                NOAA Weather Dashboard <input id="helpBtn" type="image" src="src/img/help-button.svg" style="width:15px" alt="Help Button"
-                                              onclick="window.open('pages/help/index.html', '_blank')" />
+            <h3>
+                At a Glance Dashboard <input id="helpBtn" type="image" src="src/img/help-button.svg" style="width:15px" alt="Help Button"
+                                             onclick="window.open('pages/help/index.html', '_blank')" />
                 <img id="headerIcon" src="src/favicon_io/favicon-32x32.png" />
             </h3>
         </header>
         <button style="display:none" id="clearSelection" onclick="clearSelection()">Clear Selection</button>
-        <div id="mapid" style="z-index:1;resize:horizontal;max-width:99.99%; "></div>
 
         <div id="search" class="search">
-            <input type="text" name="filter" class="block" placeholder=" Filter.." id="filter" />
+            <input type="text" name="filter" class="block" placeholder=" Filter.." id="filter" style="height: 100px; font-size: 25px;" />
             <div class="collection-container">
                 <p class="collection"></p>
             </div>
         </div>
 
-        <div id="indecator1" class="indecator block">
-            <h2>-</h2>
-            <span> </span>
-            <p>
-                <br />
+        <div id="indecator13" class="indecator block">Current Weather (Your Location)</div>
+        <div id="indecator14" class="indecator block"></div>
 
-            </p>
-        </div>
+        <div id="indecator1" class="indecator block" onclick="window.open('https://spot.weather.gov/')">NOAA SPOT</div>
         <div id="indecator2" class="indecator block">
             <h2>-</h2>
             <span> </span>
@@ -64,6 +59,73 @@
 
             </p>
         </div>
+        <div id="indecator3" class="indecator block">
+            <h2>-</h2>
+            <span> </span>
+            <p>
+                <br />
+
+            </p>
+        </div>
+        <div id="indecator4" class="indecator block">
+            <h2>-</h2>
+            <span> </span>
+            <p>
+                <br />
+
+            </p>
+        </div>
+        <div id="indecator5" class="indecator block" onclick="window.open('https://gis-fema.hub.arcgis.com/pages/wildfires')">FEMA Wildfires</div>
+        <div id="indecator6" class="indecator block">
+            <h2>-</h2>
+            <span> </span>
+            <p>
+                <br />
+
+            </p>
+        </div>
+        <div id="indecator7" class="indecator block">
+            <h2>-</h2>
+            <span> </span>
+            <p>
+                <br />
+
+            </p>
+        </div>
+        <div id="indecator8" class="indecator block">
+            <h2>-</h2>
+            <span> </span>
+            <p>
+                <br />
+
+            </p>
+        </div>
+        <div id="indecator9" class="indecator block" onclick="window.open('https://www.nhc.noaa.gov/')">NOAA Tropical Storms/Hurricanes</div>
+        <div id="indecator10" class="indecator block">
+            <h2>-</h2>
+            <span> </span>
+            <p>
+                <br />
+
+            </p>
+        </div>
+        <div id="indecator11" class="indecator block">
+            <h2>-</h2>
+            <span> </span>
+            <p>
+                <br />
+
+            </p>
+        </div>
+        <div id="indecator12" class="indecator block">
+            <h2>-</h2>
+            <span> </span>
+            <p>
+                <br />
+
+            </p>
+        </div>
+
         <div id="list-container" class="block">
             <h5 id="list-title" style="text-align:center">Collection List</h5>
             <ul id="list"></ul>
@@ -71,8 +133,7 @@
         <footer class="block"></footer>
     </div>
     <div id="featureModal" class="modal"></div>
-    <script defer src="src/js/Scripts.js"></script>
-    <script type="module" src="src/js/FireBaseServices.js"></script>
+    <script src="src/js/Scripts.js"></script>
 </body>
 
 </html>

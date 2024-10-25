@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script>document.getElementsByTagName("html")[0].className += " js";</script>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/form.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<title>WxDash FAQ</title>
+</head>
+<body>
+<header class="cd-header flex flex-column flex-center">
+  <div class="text-component text-center">
+    <h1>FAQ</h1>
+  </div>
+</header>
+
+<section class="cd-faq js-cd-faq container max-width-md margin-top-lg margin-bottom-lg">
+	<ul class="cd-faq__categories">
+		<li><a class="cd-faq__category cd-faq__category-selected truncate" href="#basics">Basics</a></li>
+		<li><a class="cd-faq__category truncate" href="#dashboardelements">Dashboard Elements</a></li>
+		<li><a class="cd-faq__category truncate" href="#toolbox">Toolbox Tools</a></li>
+		<li><a class="cd-faq__category truncate" href="#usersubmitquestion">Ask a Question</a></li>
+		<li><a class="cd-faq__category truncate" href="#usersubmitquestion">Request a Feature</a></li>
+	</ul> <!-- cd-faq__categories -->
+
+	<div class="cd-faq__items">
+		<ul id="basics" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Basics</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>How do I move the Map?</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<p>Select any location within the Map, click, and drag to move the map. Utilize either the mouse scroll wheel if you have one, or the buttons on the map to Zoom In or Out. You may also, while holding the SHIFT button on your keyboard, click and drag the mouse to create a Bounding Box that the map will then zoom to.</p>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>How do I change the Map Basemaps/Layers?</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<p>Utilize the Layer Control located at the Top Right of the Map. Hover over the Layer Control and select any of the Basemaps or Layers to add or remove them from the Map. Further information about the Vector Layers can be found by selecting the "More Info" tag on each Layer.</p>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>How often is the data updated?</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<p>Each Vector Layer will update depeding on the sources update time table, generally every 10-15 minutes. Please reference information for the layer that you are interested in to learn more.</p>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+
+		<ul id="dashboardelements" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Dashboard Elements</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>How do I search for Features?</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<p>Once you have selected a Vector Layer from the Layer Control, all Features will be loaded into the Dashboard Collection List. You may then use the Filter Text Box and entery a Term to search for. While typing, Features matching the term will be displayed in a dropdown to select.</p>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>When do the Collection List and Indicator update?</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<p>The Collection List and Indicators will be updated as you interact with the Data on the layer that is selected. Moving the Map or Filtering will cause these elements to update.</p>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+		<ul id="toolbox" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>Toolbox Tools</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>How do I use the "Get Current Weather Watches/Warnings" tool?</span></a>
+				<div class="cd-faq__content">
+					<div class="text-component">
+						<p>Once you have clicked on the Toolbox icon, select the radio button for the "Get Current Weather Watches/Warnings" tool. Then, select a location on the map and you will get current Weather Watches/Warnings for that location.</p>
+					</div>
+				</div> <!-- cd-faq__content -->
+			</li>
+		</ul> <!-- cd-faq__group -->
+		<ul id="usersubmitquestion" class="cd-faq__group">
+			<li class="cd-faq__title"><h2>My question was not answered/Feature Request</h2></li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Submit a Question</span></a>
+				<div class="cd-faq__content">
+					<section class="contact-section">
+						<div class="contact-intro">
+							<h2 class="contact-title">Get in Touch</h2>
+							<p class="contact-description">
+								Fill out the form below and we'll get back to you as soon as possible.
+							</p>
+						</div>
+
+						<form class="contact-form">
+
+							<input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+							<input type="hidden" name="subject" value="New Contact Form Submission from Web3Forms" />
+							<input type="hidden" name="from_name" value="My Website" />
+
+							<div class="form-group-container">
+								<div class="form-group">
+									<label for="name" class="form-label">Name</label>
+									<input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+								</div>
+								<div class="form-group">
+									<label for="email" class="form-label">Email</label>
+									<input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+								</div>
+								<div class="form-group">
+									<label for="subject" class="form-label">Subject</label>
+									<input id="subject" name="subject" class="form-input" placeholder="Your subject" type="text" />
+								</div>
+								<div class="form-group">
+									<label for="message" class="form-label">Message</label>
+									<textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+								</div>
+							</div>
+							<button class="form-submit" type="submit">Send Message</button>
+						</form>
+					</section>
+				</div>
+			</li>
+			<li class="cd-faq__item">
+				<a class="cd-faq__trigger" href="#0"><span>Request a Feature</span></a>
+				<div class="cd-faq__content">
+					<section class="contact-section">
+						<div class="contact-intro">
+							<h2 class="contact-title">Get in Touch</h2>
+							<p class="contact-description">
+								Fill out the form below and we'll get back to you as soon as possible.
+							</p>
+						</div>
+
+						<form class="request-form" action="" method="post">
+							<div class="form-group-container">
+								<div class="form-group">
+									<label for="name" class="form-label">Name</label>
+									<input id="name" name="name" class="form-input" placeholder="Your name" type="text" />
+								</div>
+								<div class="form-group">
+									<label for="email" class="form-label">Email</label>
+									<input id="email" name="email" class="form-input" placeholder="Your email" type="email" />
+								</div>
+								<div class="form-group">
+									<label for="subject" class="form-label">Subject</label>
+									<input id="subject" name="subject" class="form-input" placeholder="Your subject" type="text" />
+								</div>
+								<div class="form-group">
+									<label for="message" class="form-label">Message</label>
+									<textarea class="form-textarea" id="message" name="message" placeholder="Your message"></textarea>
+								</div>
+							</div>
+							<button class="form-submit" onclick="LogForm()">Send Message</button>
+						</form>
+					</section>
+				</div>
+			</li>
+		</ul> <!-- cd-faq__group -->
+	</div> <!-- cd-faq__items -->
+
+	<a href="#0" class="cd-faq__close-panel text-replace">Close</a>
+  
+  <div class="cd-faq__overlay" aria-hidden="true"></div>
+</section> <!-- cd-faq -->
+<script>
+	function LogForm(form) {
+        console.log($('.request-form').serializeArray())
+	}
+</script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script> 
+</body>
+</html>

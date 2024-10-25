@@ -19,21 +19,17 @@ body {
 .container {
     display: grid;
     grid-template-areas:
-        "header  header header header header header"
-        "map     map    map    map    search search"
-        "map     map    map    map    ind1   ind2"
-        "map     map    map    map    list  list"
-        "map     map    map    map    list   list"
-        "footer  footer footer footer footer footer";
+        "header  header  header  header  header  header"
+        "ind13   ind14   ind14   ind14   search  search"
+        "ind1    ind2    ind3    ind4    list    list"
+        "ind5    ind6    ind7    ind8    list    list"
+        "ind9    ind10   ind11   ind12   list    list"
+        "footer  footer  footer  footer  footer  footer";
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto 2fr 2fr auto;
+    grid-template-rows: auto auto auto auto 2fr auto;
     grid-gap: 10px;
     height: 98vh;
     align-items: stretch;
-}
-
-#loginImg {
-    width: 20px;
 }
 
 .block {
@@ -116,18 +112,76 @@ footer {
 #indecator1 {
     grid-area: ind1;
 }
+    #indecator1:hover {
+        background: rgb(71, 71, 71);
+    }
 
 #indecator2 {
     grid-area: ind2;
 }
 
-    #indecator2:hover {
-        background: rgb(71, 71, 71);
-    }
+#indecator3 {
+    grid-area: ind3;
+}
 
+#indecator4 {
+    grid-area: ind4;
+}
 
-#indecator1:hover {
+#indecator5 {
+    grid-area: ind5;
+}
+
+#indecator5:hover {
     background: rgb(71, 71, 71);
+}
+
+#indecator6 {
+    grid-area: ind6;
+}
+
+#indecator7 {
+    grid-area: ind7;
+}
+
+#indecator8 {
+    grid-area: ind8;
+}
+
+#indecator9 {
+    grid-area: ind9;
+}
+
+#indecator9:hover {
+    background: rgb(71, 71, 71);
+}
+
+#indecator10 {
+    grid-area: ind10;
+}
+
+#indecator11 {
+    grid-area: ind11;
+}
+
+#indecator12 {
+    grid-area: ind12;
+}
+
+#indecator13 {
+    grid-area: ind13;
+}
+
+#indecator14 {
+    grid-area: ind14;
+}
+
+#indecator15 {
+    grid-area: ind15;
+}
+
+#indecator16 {
+    grid-area: ind16;
 }
 
 #search {

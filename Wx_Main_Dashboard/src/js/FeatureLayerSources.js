@@ -26,6 +26,13 @@ var featureLayerSources = [
         "attribution": '&copy; <a href="https://sos.noaa.gov/copyright/">NOAA</a>',
     },
     {
+        "Title": "FEMA Wildfires",
+        "Type": "featureLayer",
+        "Url": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/USA_Wildfires_v1/FeatureServer/0",
+        "options": {},
+        "aatribution": "&copy; <a href='https://www.arcgis.com/home/item.html?id=d957997ccee7408287a963600a77f61f'>US Department of the Interior, Office of Wildland Fire</a>"
+    },
+    {
         "Title": "Tropical Weather Outlook",
         "Type": "featureLayer",
         "Url": "https://mapservices.weather.noaa.gov/tropical/rest/services/tropical/NHC_tropical_weather/MapServer/2",
@@ -34,7 +41,7 @@ var featureLayerSources = [
             "iconStyle": "marker",
             "style": false,
             "popupContent": ['basin', 'risk2day', 'objectid'],
-            "properties": ['objectid', 'risk2day', 'prob2day', 'lat', 'lon', 'layer']
+            "properties": ['objectid', 'risk2day', 'prob2day', 'lat', 'lon','layer']
         },
         "attribution": '&copy; <a href="https://sos.noaa.gov/copyright/">NOAA</a>',
     },
@@ -48,51 +55,14 @@ var featureLayerSources = [
             "style": false,
             "popupContent": ['WIND_CHILL', 'WIND_DIRECT', 'WIND_GUST', 'WIND_SPEED',
                 'VISIBILITY', "SKY_CONDTN", "R_HUMIDITY", "HEAT_INDEX", "FLT_CATEGORY", "DEW_POINT", "ICAO"],
-            "properties": ['OBJECTID', 'ICAO', 'lat', 'lon', 'layer']
+            "properties": ['OBJECTID', 'ICAO', 'lat', 'lon','layer']
         },
         "attribution":
             '&copy; <a href="https://sos.noaa.gov/copyright/">NOAA</a>',
     },
     {
-        "Title": "Current RADAR Weather",
-        "Type": "imageMapLayer",
-        "Url": "https://mapservices.weather.noaa.gov/eventdriven/rest/services/radar/radar_base_reflectivity_time/ImageServer",
-        "options": {
-            "pointToLayer": false,
-            "iconStyle": false,
-            "style": true,
-            "popupContent": false
-        },
-        "attribution": "National Oceanic and Atmospheric Administration, NOAA, National Weather Service, NWS",
-    },
-    //{
-    //    "Title": "Current Hurricane Outlook",
-    //    "Type": "featureLayerHurricane",
-    //    "Layers": [
-    //        {
-    //            "url": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/0",
-    //            "geometry":"point"
-    //        },
-    //        {
-    //            "url": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/1",
-    //            "geometry": "point"
-    //        },
-    //        {
-    //            "url": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/2",
-    //            "geometry": "line"
-    //        },
-    //        {
-    //            "url": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/3",
-    //            "geometry": "line"
-    //        },
-    //        {
-    //            "url": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/4",
-    //            "geometry": "polygon"
-    //        },
-    //        {
-    //            "url": "https://services9.arcgis.com/RHVPKKiFTONKtxq3/ArcGIS/rest/services/Active_Hurricanes_v1/FeatureServer/5",
-    //            "geometry": "line"
-    //        }
-    //    ]
-    //}
-];
+        "Title": "Your Current Weather",
+        "Url": "https://api.weather.gov/points/"
+    }
+
+]

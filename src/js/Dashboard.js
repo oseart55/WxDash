@@ -147,63 +147,65 @@ function renderList(layer) {
     switch (layer) {
         case layer:
             featureLayerSources.forEach((source) => {
-                if (source.Title == layer && source.Title != "Current RADAR Weather") {
-                    overlayMaps[layer].eachActiveFeature(function (e) {
-                        let data = {}
-                        source.options.properties.forEach((prop) => {
-                            switch (prop) {
-                                case "bounds":
-                                    data[prop] = e.getBounds()
-                                    break;
-                                case "dn":
-                                    switch (e.feature.properties.dn) {
-                                        case 5:
-                                            data["name"] = "ELEVATED"
-                                            break;
-                                        case 8:
-                                            data["name"] = "CRITICAL"
-                                            break;
-                                        case 10:
-                                            data["name"] = "EXTREME"
-                                            break;
-                                    }
-                                    break;
-                                case "risk2day":
-                                    switch (e.feature.properties.risk2day) {
-                                        case "Low":
-                                            data["name"] = "Low"
-                                            break;
-                                        case "Medium":
-                                            data["name"] = "Medium"
-                                            break;
-                                        default:
-                                            data["name"] = "Please Update"
-                                    }
-                                    break;
-                                case "ICAO":
-                                    data["name"] = e.feature.properties.ICAO
-                                    break;
-                                case "layer":
-                                    data['layer'] = layer
-                                    break;
-                                case prop:
-                                    data[prop] = e.feature.properties[prop]
-                                    break;
-                                
+                if (source.Title == layer) {
+                    if ((source.Title != "Current RADAR Weather") && source.Title != "Current Hurricane Outlook") {
+                        overlayMaps[layer].eachActiveFeature(function (e) {
+                            let data = {}
+                            source.options.properties.forEach((prop) => {
+                                switch (prop) {
+                                    case "bounds":
+                                        data[prop] = e.getBounds()
+                                        break;
+                                    case "dn":
+                                        switch (e.feature.properties.dn) {
+                                            case 5:
+                                                data["name"] = "ELEVATED"
+                                                break;
+                                            case 8:
+                                                data["name"] = "CRITICAL"
+                                                break;
+                                            case 10:
+                                                data["name"] = "EXTREME"
+                                                break;
+                                        }
+                                        break;
+                                    case "risk2day":
+                                        switch (e.feature.properties.risk2day) {
+                                            case "Low":
+                                                data["name"] = "Low"
+                                                break;
+                                            case "Medium":
+                                                data["name"] = "Medium"
+                                                break;
+                                            default:
+                                                data["name"] = "High"
+                                        }
+                                        break;
+                                    case "ICAO":
+                                        data["name"] = e.feature.properties.ICAO
+                                        break;
+                                    case "layer":
+                                        data['layer'] = layer
+                                        break;
+                                    case prop:
+                                        data[prop] = e.feature.properties[prop]
+                                        break;
+
+                                }
+                            });
+                            if (data['lat'] == null) {
+                                if (e.feature.geometry.type == "Point") {
+                                    data['lat'] = e.feature.geometry.coordinates[1]
+                                }
                             }
+                            if (data['lon'] == null) {
+                                if (e.feature.geometry.type == "Point") {
+                                    data['lon'] = e.feature.geometry.coordinates[0]
+                                }
+                            }
+                            scatterPlotDataArray.push(data)
                         });
-                        if (data['lat'] == null) {
-                            if (e.feature.geometry.type == "Point") {
-                                data['lat'] = e.feature.geometry.coordinates[1]
-                            }
-                        }
-                        if (data['lon'] == null) {
-                            if (e.feature.geometry.type == "Point") {
-                                data['lon'] = e.feature.geometry.coordinates[0]
-                            }
-                        }
-                        scatterPlotDataArray.push(data)
-                    });
+                    }
                 }
             });
             break;
@@ -361,3 +363,5 @@ let autoUpdate = setInterval(() => {
     }
     showSnackbar()
 }, 600000);
+
+window.
