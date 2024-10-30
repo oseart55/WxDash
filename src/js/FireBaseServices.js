@@ -4,16 +4,6 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase
 import { getAuth, signInWithPopup, GithubAuthProvider, browserSessionPersistence, setPersistence } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 import { getFirestore, setDoc, getDocs, updateDoc, doc, collection, query, where } from 'https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js';
 
-const firebaseConfig = {
-    apiKey: "AIzaSyB-X40XzV46uZxdejv9sb7TR0pLz4XslPc",
-    authDomain: "wxdash.firebaseapp.com",
-    projectId: "wxdash",
-    storageBucket: "wxdash.appspot.com",
-    messagingSenderId: "370716619107",
-    appId: "1:370716619107:web:da1ce358363390d69ba356",
-    measurementId: "G-MSYC1NMSME"
-};
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
